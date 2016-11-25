@@ -12,6 +12,9 @@ import Alamofire
 class ViewController: UIViewController {
 
     @IBOutlet weak var txtJSON: UITextView!
+    
+    var jsonArray:NSArray?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -30,11 +33,21 @@ class ViewController: UIViewController {
             print(response.data)
             print(response.result)
             if let JSON = response.result.value{
-                print("JSON:\(JSON)")
+                let arreglo = JSON as! NSDictionary
+                self.jsonArray = arreglo["Eventos"] as? NSArray
+                print("JSON:\(arreglo["Eventos"])")
+                print("JSON2:\(self.jsonArray!.count)")
+                let hilera = self.jsonArray?[0] as! NSDictionary
+                print("JSON3:\(hilera["sURI"])")
                 let datos = "\(JSON)"
                 self.txtJSON.text = datos as String
             }
         }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let location = segue.destination as! UINavigationController
+        let addEventViewControler = location.topViewController as! EventosTVC
+        addEventViewControler.losEventos = jsonArray
     }
 }
 

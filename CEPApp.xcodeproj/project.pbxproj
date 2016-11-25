@@ -16,6 +16,8 @@
 		B72AE0B51DDE7D76007BFC3D /* CEPAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72AE0B41DDE7D76007BFC3D /* CEPAppUITests.swift */; };
 		B72AE0DF1DDE95B3007BFC3D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B72AE0CE1DDE924F007BFC3D /* Alamofire.framework */; };
 		B72AE0E01DDE95B3007BFC3D /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B72AE0CE1DDE924F007BFC3D /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B72AE0E91DE77705007BFC3D /* EventosTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72AE0E81DE77705007BFC3D /* EventosTVC.swift */; };
+		B72AE0EB1DE7D1B9007BFC3D /* DetallesEventos.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72AE0EA1DE7D1B9007BFC3D /* DetallesEventos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		B72AE0B41DDE7D76007BFC3D /* CEPAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CEPAppUITests.swift; sourceTree = "<group>"; };
 		B72AE0B61DDE7D76007BFC3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B72AE0C21DDE924F007BFC3D /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = ../APIsXcode/Alamofire/Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		B72AE0E81DE77705007BFC3D /* EventosTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventosTVC.swift; sourceTree = "<group>"; };
+		B72AE0EA1DE7D1B9007BFC3D /* DetallesEventos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetallesEventos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +169,8 @@
 		B72AE0931DDE7D76007BFC3D /* CEPApp */ = {
 			isa = PBXGroup;
 			children = (
+				B72AE0E81DE77705007BFC3D /* EventosTVC.swift */,
+				B72AE0EA1DE7D1B9007BFC3D /* DetallesEventos.swift */,
 				B72AE0941DDE7D76007BFC3D /* AppDelegate.swift */,
 				B72AE0961DDE7D76007BFC3D /* ViewController.swift */,
 				B72AE0981DDE7D76007BFC3D /* Main.storyboard */,
@@ -401,6 +407,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B72AE0971DDE7D76007BFC3D /* ViewController.swift in Sources */,
+				B72AE0E91DE77705007BFC3D /* EventosTVC.swift in Sources */,
+				B72AE0EB1DE7D1B9007BFC3D /* DetallesEventos.swift in Sources */,
 				B72AE0951DDE7D76007BFC3D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
