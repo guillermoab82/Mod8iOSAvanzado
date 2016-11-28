@@ -135,14 +135,17 @@ class EventosTVC: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let location = segue.destination as! DetallesEventos
+        let elIndexPath = self.tableView.indexPathForSelectedRow
+        let dictoDetalles = self.losEventos![elIndexPath!.row] as! NSDictionary
+        location.EventoDetalle = dictoDetalles
     }
-    */
 
 }
