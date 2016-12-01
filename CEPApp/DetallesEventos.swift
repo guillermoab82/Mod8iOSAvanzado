@@ -21,18 +21,18 @@ class DetallesEventos: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.lblTitle.text = EventoDetalle["title"] as? String
-        self.lblFinicio.text = EventoDetalle["fInit"] as? String
-        self.lblHInicio.text = EventoDetalle["hInit"] as? String
-        self.lblFTermino.text = EventoDetalle["fEnd"] as? String
-        self.lblHTermino.text = EventoDetalle["hEnd"] as? String
+        self.lblTitle.text = EventoDetalle?["title"] as? String
+        self.lblFinicio.text = EventoDetalle?["fInit"] as? String
+        self.lblHInicio.text = EventoDetalle?["hInit"] as? String
+        self.lblFTermino.text = EventoDetalle?["fEnd"] as? String
+        self.lblHTermino.text = EventoDetalle?["hEnd"] as? String
         
         var laImg:String="http://www.posgrado.unam.mx/sites/default/files/"
-        if !(EventoDetalle["uri2"] is NSNull){
-            laImg = laImg+(EventoDetalle["uri2"] as! String).lowercased()
+        if !(EventoDetalle?["uri2"] is NSNull){
+            laImg = laImg+(EventoDetalle?["uri2"] as! String).lowercased()
         }else{
-            if !(EventoDetalle["uri"] is NSNull){
-                laImg = laImg+(EventoDetalle["uri"] as! String).lowercased()
+            if !(EventoDetalle?["uri"] is NSNull){
+                laImg = laImg+(EventoDetalle?["uri"] as! String).lowercased()
             }else{
                 laImg = laImg+"image-not-available.png"
             }
@@ -49,7 +49,14 @@ class DetallesEventos: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
-
+    
+    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+        URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            completion(data, response, error)
+            }.resume()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
